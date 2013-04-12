@@ -1,0 +1,48 @@
+﻿<pages:PhoneApplicationPage 
+    x:Class="SysTrayApp.Pages.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:pages="clr-namespace:SysTrayApp.Pages"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="PortraitOrLandscape" Orientation="Portrait">
+
+    <Grid x:Name="LayoutRoot" Background="DarkGray">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="{StaticResource AppName}" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="start" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <StackPanel x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <TextBlock Style="{StaticResource PhoneTextNormalStyle}" TextWrapping="Wrap" Margin="12">
+                <Run>This application shows how to configure the system tray.</Run>
+            </TextBlock>
+            <Button Tag="/Pages/OtherPage.xaml" Click="Button_Click_2">live configurator</Button>
+            <Button Tag="/Pages/SpecialPage.xaml" Click="Button_Click_2" Margin="0 12">special page</Button>
+            
+            <TextBlock Style="{StaticResource PhoneTextNormalStyle}" TextWrapping="Wrap" Margin="12">
+                <Run>Application built by ambiguouscode.net.</Run>
+            </TextBlock>
+            <TextBlock Style="{StaticResource PhoneTextNormalStyle}" TextWrapping="Wrap" Margin="12">
+                <Run>You are free to play with this sample code.</Run>
+            </TextBlock>
+            <TextBlock Style="{StaticResource PhoneTextNormalStyle}" TextWrapping="Wrap" Margin="12">
+                <Run>Don't forget to try both light and dark theme!</Run>
+            </TextBlock>
+
+            <Button Tag="http://ambiguouscode.net" Click="Button_Click_1" Style="{StaticResource ClearButtonStyle}">ambiguouscode.net</Button>
+            <Button Tag="http://ambiguouscode.fr" Click="Button_Click_1" Style="{StaticResource ClearButtonStyle}">ambiguouscode.fr</Button>
+        </StackPanel>
+    </Grid>
+</pages:PhoneApplicationPage>
